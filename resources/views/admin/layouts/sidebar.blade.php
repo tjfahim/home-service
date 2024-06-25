@@ -26,6 +26,14 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Content Manage</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("home-content.edit") }}">Home Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("settings.edit") }}">Settings</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("brandimage.index") }}">Brand Image</a></li>
+                        </ul>
+                    </li>                   
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Settings</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="{{ route("user.profile") }}">User</a></li>

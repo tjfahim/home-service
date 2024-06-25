@@ -36,7 +36,7 @@ class ServiceController extends Controller
             'time_duration' => 'nullable|string',
             'price' => 'nullable|numeric',
             'location' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp',
             'status' => 'required|boolean',
         ]);
 
@@ -77,7 +77,7 @@ class ServiceController extends Controller
             'time_duration' => 'nullable|string',
             'price' => 'nullable|numeric',
             'location' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp',
             'status' => 'required|boolean',
         ]);
 
