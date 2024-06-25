@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,4 +42,12 @@ Route::group(['middleware' => 'role:2', 'prefix' => 'admin'], function () {
     Route::put('service-categories/{serviceCategory}', [ServiceCategoryController::class, 'update'])->name('service.category.update');
     Route::delete('service-categories/{serviceCategory}', [ServiceCategoryController::class, 'destroy'])->name('service.category.destroy');
 
+
+
+    Route::get('/services', [ServiceController::class, 'index'])->name('service.index');
+    Route::get('/services/create', [ServiceController::class, 'create'])->name('service.create');
+    Route::post('/services/store', [ServiceController::class, 'store'])->name('service.store');
+    Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
+    Route::put('/services/{id}/update', [ServiceController::class, 'update'])->name('service.update');
+    Route::delete('/services/{id}/delete', [ServiceController::class, 'destroy'])->name('service.destroy');
 });
