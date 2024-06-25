@@ -1,7 +1,7 @@
 
 @include('admin.layouts.header')
 
-
-@yield('main_content')
+<body class="bg-white">
+    @yield('main_content')
 
 @include('admin.layouts.footer')

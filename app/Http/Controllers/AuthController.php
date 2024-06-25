@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+
 
 class AuthController extends Controller
 {
@@ -75,6 +77,62 @@ class AuthController extends Controller
         Auth::login($user);
 
         return Redirect::route('login')->with('success', 'User successfully registered');
+    }
+
+    public function profile(Request $request)
+    {
+        return view('admin.profile');
+    }
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+        
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+    
+        $user->name = $request->name;
+        $user->save();
+    
+        return redirect()->back()->with('success', 'Profile updated successfully!');
+    }
+    // Change Password
+    public function changePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required',
+            'new_password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $user = Auth::user();
+
+        if (!Hash::check($request->input('current_password'), $user->password)) {
+            return redirect()->back()->withErrors(['current_password' => 'Current password is incorrect'])->withInput();
+        }
+
+        $user->password = Hash::make($request->input('new_password'));
+        $user->save();
+
+        return redirect()->back()->with('success', 'Password changed successfully!');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
    
 
