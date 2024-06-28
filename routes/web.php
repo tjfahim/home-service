@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,13 +22,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/', [FrontendController::class, 'home'])->name('home');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/adminpage', [AuthController::class, 'showLoginFrom'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'showRegisterFrom'])->name('register');
 Route::post('/register-submit', [AuthController::class, 'registerSubmit'])->name('register.submit');
-
+    
 Route::group(['middleware' => 'role:2', 'prefix' => 'admin'], function () {
     Route::get('/profile', [AuthController::class, 'profile'])->name('user.profile');
     Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');

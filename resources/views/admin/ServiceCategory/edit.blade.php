@@ -45,6 +45,31 @@
                             <input type="text" name="name" class="form-control" value="{{ old('name', $category->name) }}" required>
                         </div>
                         <div class="form-group">
+                            <label for="description" class="form-control-label">Description:</label>
+                            <textarea name="description" id="description" class="form-control" rows="5">{{ old('description', $category->description) }}</textarea>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="price" class="form-control-label">Price Starting:</label>
+                            <input type="text" name="price" class="form-control" value="{{ old('price', $category->price) }}" placeholder="e.g. 100.00">
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="image" class="form-control-label">Image:</label>
+                            <input type="file" name="image" class="form-control-file">
+                            @if ($category->image)
+                                <p>Current Image:</p>
+                                <img style="width:20%" src="{{ asset($category->image) }}" alt="Current Image" class="img-fluid">
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="feature" class="form-control-label">Feature:</label>
+                             <select name="feature" class="form-control" required>
+                                <option value="1" {{ old('feature', $category->feature) == '1' ? 'selected' : '' }}>Active</option>
+                                <option value="0" {{ old('feature', $category->feature) == '0' ? 'selected' : '' }}>Inactive</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="status" class="form-control-label">Status:</label>
                              <select name="status" class="form-control" required>
                                 <option value="1" {{ old('status', $category->status) == '1' ? 'selected' : '' }}>Active</option>
@@ -63,3 +88,16 @@
 </div>
 
 @endsection
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        ClassicEditor
+            .create(document.querySelector('#description'))
+            .catch(error => {
+                console.error(error);
+            });
+
+    });
+</script>

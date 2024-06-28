@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,6 +28,11 @@ class ServiceCategoryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|unique:service_categories,name',
+            'price' => 'required',
+            'description' => 'required',
+            'feature' => 'required',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp',
+
             'status' => 'required|string',
         ]);
       
@@ -35,6 +41,12 @@ class ServiceCategoryController extends Controller
             return Redirect::back()->withInput()->withErrors($validator);
         }
         $input = $request->all();
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('images/services'), $imageName);
+            $input['image'] = 'images/services/' . $imageName;
+        }
 
     
         ServiceCategory::create($input);
@@ -55,7 +67,12 @@ class ServiceCategoryController extends Controller
         $category = ServiceCategory::find($id);
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
+            'name' => 'required|string|unique:service_categories,name',
+            'price' => 'required',
+            'description' => 'required',
+            'feature' => 'required',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg,webp',
+
             'status' => 'required|string',
         ]);
         
@@ -64,6 +81,18 @@ class ServiceCategoryController extends Controller
         }
         $input = $request->all();
     
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if (File::exists(public_path($category->image))) {
+                File::delete(public_path($category->image));
+            }
+            // Upload new image
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('images/services'), $imageName);
+            $input['image'] = 'images/services/' . $imageName;
+        }
+
         $category->update($input);
     
         return redirect()->route('service.category.index')->with('success', 'Service Category updated successfully.');
@@ -73,7 +102,9 @@ class ServiceCategoryController extends Controller
     public function destroy($id)
     {
         $category = ServiceCategory::findOrFail($id);
-       
+        if (File::exists(public_path($category->image))) {
+            File::delete(public_path($category->image));
+        }
         $category->delete();
     
         return redirect()->route('service.category.index')->with('success', 'Category deleted successfully.');

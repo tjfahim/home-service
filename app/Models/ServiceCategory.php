@@ -12,5 +12,9 @@ class ServiceCategory extends Model
     protected $fillable = [
         'name', // Add the name column to fillable
         'status', // Add the name column to fillable
+        'image', // Add the name column to fillable
+        'price', // Add the name column to fillable
+        'description', // Add the name column to fillable
+        'feature', // Add the name column to fillable
     ];
 }
