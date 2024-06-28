@@ -61,13 +61,12 @@ body {
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item {{ request()->is('hvac-installation') ? 'active' : '' }}" href="">HVAC Installation</a>
-                                <a class="dropdown-item {{ request()->is('painting') ? 'active' : '' }}" href="">Painting Installation</a>
-                                <a class="dropdown-item {{ request()->is('civil-work') ? 'active' : '' }}" href="">Civil Work</a>
-                                <a class="dropdown-item {{ request()->is('plumbing') ? 'active' : '' }}" href="">Plumbing</a>
-                                <a class="dropdown-item {{ request()->is('electrical') ? 'active' : '' }}" href="">Electrical</a>
-                                <a class="dropdown-item {{ request()->is('aircon-repair') ? 'active' : '' }}" href="">Aircon Repair</a>
-    
+                                @foreach ($categories as $category)
+                                <a class="dropdown-item {{ request()->is('category-details/' . $category->id) ? 'active' : '' }}" href="{{ route('category.details', ['id' => $category->id]) }}">{{ $category->name }}</a>
+
+                                @endforeach
+                                
+                                
                             </div>
                         </li>
                         <li class="nav-item">

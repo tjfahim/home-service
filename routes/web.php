@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/category-details/{id}', [FrontendController::class, 'categorydetails'])->name('category.details');
 Route::get('/adminpage', [AuthController::class, 'showLoginFrom'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

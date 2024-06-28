@@ -103,10 +103,6 @@
                 console.error(error);
             });
 
-        ClassicEditor
-            .create(document.querySelector('#short_description'))
-            .catch(error => {
-                console.error(error);
-            });
+        
     });
 </script>

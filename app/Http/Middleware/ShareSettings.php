@@ -19,7 +19,11 @@ class ShareSettings
     {
         $settingsInfo = DB::table('settings')->first();
 
+        $categories = DB::table('service_categories')->get();
         View::share('settingsinfo', $settingsInfo);
+        View::share('categories', $categories);
+
+        
 
         return $next($request);
     }

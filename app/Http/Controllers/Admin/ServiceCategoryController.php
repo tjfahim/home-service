@@ -67,7 +67,7 @@ class ServiceCategoryController extends Controller
         $category = ServiceCategory::find($id);
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|unique:service_categories,name',
+            'name' => 'required|string',
             'price' => 'required',
             'description' => 'required',
             'feature' => 'required',

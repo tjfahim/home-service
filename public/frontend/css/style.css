@@ -127,6 +127,15 @@ ul,ol {
         .details-section{
             background-color: #9bcbfb45;
         }
+        .categorydetails-section{
+            margin-top: 100px;
+        }
+
+        .rounded-circle{
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
 /* end */
 
 
