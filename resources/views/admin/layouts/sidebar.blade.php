@@ -28,7 +28,12 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Content Manage</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("home-content.edit") }}">Home Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("home-content.edit") }}">Home Page Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("hvacpage.edit") }}">HVAC Page Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("civilpage.edit") }}">Civil Page Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("plumbingpage.edit") }}">Plumbing Page Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("electricalpage.edit") }}">Electrical Page Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="{{ route("airconpage.edit") }}">Aircon Page Content</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{{ route("settings.edit") }}">Settings</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="{{ route("brandimage.index") }}">Brand Image</a></li>
                         </ul>

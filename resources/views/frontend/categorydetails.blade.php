@@ -34,6 +34,7 @@
             <a href="#" class="btn btn-primary">Order Now</a>
         </div>
     </div>
+    
 @empty
     <div class="row">
         <div class="col-md-12 text-center">
@@ -41,7 +42,9 @@
         </div>
     </div>
 @endforelse
-             
+<div class="d-flex justify-content-end mb-3 mt-5">
+    <a href="{{ route('allservice', $category->id) }}" class="btn btn-dark">View All Services</a>
+</div>
             </div>
         </div>
     </div>

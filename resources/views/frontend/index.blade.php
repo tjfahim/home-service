@@ -8,6 +8,13 @@
     }
     .card-body{
         height: 750px;
+        transition: box-shadow 0.3s ease;
+
+    }
+    .card-body:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
     }
     .brand-image-custom{
         height: 100px;

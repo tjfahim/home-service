@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AirconPageController;
 use App\Http\Controllers\Admin\BrandImageController;
+use App\Http\Controllers\Admin\CivilPageController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ElectricalPageController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\HvacPageController;
+use App\Http\Controllers\Admin\PlumbingPageController;
 use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
@@ -25,6 +30,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/category-details/{id}', [FrontendController::class, 'categorydetails'])->name('category.details');
+Route::get('/book-online/{id?}', [FrontendController::class, 'allservice'])->name('allservice');
+Route::get('/hvac-installation', [FrontendController::class, 'hvacpage'])->name('hvacpage');
+Route::get('/civil-work', [FrontendController::class, 'civilpage'])->name('civilpage');
+Route::get('/aircon-repair', [FrontendController::class, 'airconpage'])->name('airconpage');
+Route::get('/electrical', [FrontendController::class, 'electricalpage'])->name('electricalpage');
+Route::get('/plumbing', [FrontendController::class, 'plumbingpage'])->name('plumbingpage');
 Route::get('/adminpage', [AuthController::class, 'showLoginFrom'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -66,4 +77,17 @@ Route::get('settings/edit', [SettingController::class, 'edit'])->name('settings.
     Route::get('brand-images/{id}/edit', [BrandImageController::class, 'edit'])->name('brandimage.edit');
     Route::put('brand-images/{id}', [BrandImageController::class, 'update'])->name('brandimage.update');
     Route::delete('brand-images/{id}', [BrandImageController::class, 'destroy'])->name('brandimage.destroy');
+
+
+    Route::get('/hvacpage/edit', [HvacPageController::class, 'edit'])->name('hvacpage.edit');
+    Route::put('/hvacpage/update', [HVACPageController::class, 'update'])->name('hvacpage.update');
+    Route::get('/civilpage/edit', [CivilPageController::class, 'edit'])->name('civilpage.edit');
+    Route::put('/civilpage/update', [CivilPageController::class, 'update'])->name('civilpage.update');
+    Route::get('/electricalpage/edit', [ElectricalPageController::class, 'edit'])->name('electricalpage.edit');
+    Route::put('/electricalpage/update', [ElectricalPageController::class, 'update'])->name('electricalpage.update');
+    Route::get('/aircon/edit', [AirconPageController::class, 'edit'])->name('airconpage.edit');
+    Route::put('/aircon/update', [AirconPageController::class, 'update'])->name('airconpage.update');
+    Route::get('/plumbing/edit', [PlumbingPageController::class, 'edit'])->name('plumbingpage.edit');
+    Route::put('/plumbing/update', [PlumbingPageController::class, 'update'])->name('plumbingpage.update');
+
 });

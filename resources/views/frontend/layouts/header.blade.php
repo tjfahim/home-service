@@ -70,22 +70,22 @@ body {
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('hvac-installation') ? 'active' : '' }}" href="">HVAC Installation</a>
+                            <a class="nav-link {{ request()->is('hvac-installation') ? 'active' : '' }}" href="{{ route('hvacpage') }}">HVAC Installation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('civil-work') ? 'active' : '' }}" href="">Civil Work</a>
+                            <a class="nav-link {{ request()->is('civil-work') ? 'active' : '' }}" href="{{ route('civilpage') }}">Civil Work</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('plumbing') ? 'active' : '' }}" href="">Plumbing</a>
+                            <a class="nav-link {{ request()->is('plumbing') ? 'active' : '' }}" href="{{ route('plumbingpage') }}">Plumbing</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('electrical') ? 'active' : '' }}" href="">Electrical</a>
+                            <a class="nav-link {{ request()->is('electrical') ? 'active' : '' }}" href="{{ route('electricalpage') }}">Electrical</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('aircon-repair') ? 'active' : '' }}" href="">Aircon Repair</a>
+                            <a class="nav-link {{ request()->is('aircon-repair') ? 'active' : '' }}" href="{{ route('airconpage') }}">Aircon Repair</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('book-online') ? 'active' : '' }}" href="">Book Online</a>
+                            <a class="nav-link {{ request()->is('book-online') ? 'active' : '' }}" href="{{ route('allservice') }}">Book Online</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->is('more') ? 'active' : '' }}" href="">More</a>
