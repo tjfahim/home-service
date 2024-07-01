@@ -32,6 +32,7 @@
     <script src="{{ asset('frontend/js/app.js')}}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('frontend/js/custom.js')}}"></script>
+    
     <script> 
         var owl = $('.owl-carousel');
             owl.owlCarousel({

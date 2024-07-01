@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/slider/dist/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/media.css')}}">
+
   
     <style>
         .headmain {

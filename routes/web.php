@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AirconPageController;
+use App\Http\Controllers\Admin\BookingManageController;
 use App\Http\Controllers\Admin\BrandImageController;
 use App\Http\Controllers\Admin\CivilPageController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -30,7 +31,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/category-details/{id}', [FrontendController::class, 'categorydetails'])->name('category.details');
+Route::get('/service-booking/{id}', [FrontendController::class, 'booking'])->name('service.booking');
 Route::get('/book-online/{id?}', [FrontendController::class, 'allservice'])->name('allservice');
+Route::post('/booking-store', [FrontendController::class, 'bookingstore'])->name('booking.store');
 Route::get('/hvac-installation', [FrontendController::class, 'hvacpage'])->name('hvacpage');
 Route::get('/civil-work', [FrontendController::class, 'civilpage'])->name('civilpage');
 Route::get('/aircon-repair', [FrontendController::class, 'airconpage'])->name('airconpage');
@@ -89,5 +92,13 @@ Route::get('settings/edit', [SettingController::class, 'edit'])->name('settings.
     Route::put('/aircon/update', [AirconPageController::class, 'update'])->name('airconpage.update');
     Route::get('/plumbing/edit', [PlumbingPageController::class, 'edit'])->name('plumbingpage.edit');
     Route::put('/plumbing/update', [PlumbingPageController::class, 'update'])->name('plumbingpage.update');
+
+
+    Route::get('bookingmanage/{status?}', [BookingManageController::class, 'index'])->name('bookingmanage.index');
+    Route::get('bookingmanage/{id}', [BookingManageController::class, 'show'])->name('bookingmanage.show');
+    Route::get('bookingmanage/{id}/edit', [BookingManageController::class, 'edit'])->name('bookingmanage.edit');
+    Route::put('bookingmanage/{id}', [BookingManageController::class, 'update'])->name('bookingmanage.update');
+    Route::delete('bookingmanage/{id}', [BookingManageController::class, 'destroy'])->name('bookingmanage.destroy');
+
 
 });

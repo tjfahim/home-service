@@ -31,7 +31,7 @@
         
         <!-- Order Now Button -->
         <div class="col-md-3 text-center">
-            <a href="#" class="btn btn-primary">Order Now</a>
+            <a href="{{ route('service.booking', $service->id) }}" class="btn btn-primary">Order Now</a>
         </div>
     </div>
     

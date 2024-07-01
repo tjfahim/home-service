@@ -7,13 +7,14 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <a class="navbar-brand" href="./"><h2 class="test-white">Home Service</h2></a>
+                <a class="navbar-brand" href="{{ route('admin.dashboard') }}"><h2 class="test-white">Home Service</h2></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ route('admin.dashboard') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ route('bookingmanage.index') }}"> <i class="menu-icon fa fa-dashboard"></i>Booking List </a>
                     </li>
                     <h3 class="menu-title">Service</h3><!-- /.menu-title -->
                    

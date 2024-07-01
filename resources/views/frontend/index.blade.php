@@ -86,8 +86,8 @@
             <div class="col-md-10">
                 <div class="row">
                     @foreach($brands as $brand)
-                    <div class="col-md-2 mb-3">
-                        <img class="brand-image-custom" src="{{ asset($brand->image) }}" alt="">
+                    <div class="col-md-2 mb-3 ">
+                        <img class="brand-image-custom p-1" src="{{ asset($brand->image) }}" alt="">
                     </div>
                     @endforeach
                 </div>
