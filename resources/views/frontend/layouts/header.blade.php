@@ -29,6 +29,28 @@
 body {
     padding-top: 50px; /* Adjust this value to match your header height */
 }
+
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: green; /* Adjust background color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears above other content */
+    text-decoration: none; /* Remove underline from link */
+    color: white; /* Icon color */
+    font-size: 30px; /* Icon size */
+}
+
+#whatsapp-button:hover {
+    background-color: darkgreen; /* Adjust hover background color */
+}
     </style>
 </head>
 
@@ -89,7 +111,7 @@ body {
                             <a class="nav-link {{ request()->is('book-online') ? 'active' : '' }}" href="{{ route('allservice') }}">Book Online</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('more') ? 'active' : '' }}" href="">More</a>
+                            <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -97,6 +119,9 @@ body {
         </nav>
     </div>
    
+    <a href="https://wa.me/{{ $settingsinfo->callnownumber }}" target="_blank" id="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp icon -->
+    </a>
 
     <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>

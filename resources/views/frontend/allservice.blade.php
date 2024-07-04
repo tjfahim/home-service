@@ -34,7 +34,7 @@
                         <div class="col-md-5">
                             <h5>{{ $service->title }}</h5>
                             <p>{{ $service->short_description }}</p>
-                            <a href="#" class="">View Details</a>
+                            <a href="{{ route('service.details', ['id' => $service->id]) }}" class="">View Details</a>
                         </div>
                         
                         <!-- Price -->
@@ -44,7 +44,7 @@
                         
                         <!-- Order Now Button -->
                         <div class="col-md-3 text-center">
-                            <a href="#" class="btn btn-primary">Order Now</a>
+                            <a href="{{ route('service.booking', ['id' => $service->id]) }}" class="btn btn-primary">Order Now</a>
                         </div>
                     </div>
                 @empty

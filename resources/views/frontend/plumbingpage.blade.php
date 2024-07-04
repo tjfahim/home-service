@@ -44,7 +44,7 @@
                 </div>
                 <br>
                 <div class="col-12 m-3">
-                    <a href="#" class="call-now btn btn-dark">Book Now</a>
+                    <a href="{{ route('category.details', ['id' => 4]) }}" class="call-now btn btn-dark">Book Now</a>
                 </div>
                 <div class="row my-5">
                     <div class="col-md-4 p-3 hover-card">
@@ -57,7 +57,7 @@
                                 <h1 class="card-text">{{ $content->price1}}</h1>
                                 <span class="card-title">{!! $content->service1description !!}</span>
                                 <br>
-                                <a href="#" class="call-now btn btn-dark">Book Now</a>
+                                <a href="{{ route('category.details', ['id' => 4]) }}" class="call-now btn btn-dark">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                 <h1 class="card-text">{{ $content->price2}}</h1>
                                 <span class="card-title">{!! $content->service2description !!}</span>
                                 <br>
-                                <a href="#" class="call-now btn btn-dark">Book Now</a>
+                                <a href="{{ route('category.details', ['id' => 4]) }}" class="call-now btn btn-dark">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                 <h1 class="card-text">{{ $content->price3}}</h1>
                                 <span class="card-title">{!! $content->service3description !!}</span>
                                 <br>
-                                <a href="#" class="call-now btn btn-dark">Book Now</a>
+                                <a href="{{ route('category.details', ['id' => 4]) }}" class="call-now btn btn-dark">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                     </div>
                     <br>
                     <div class="col-12">
-                        <a href="#" class="call-now btn btn-dark">Book Now</a>
+                        <a href="{{ route('category.details', ['id' => 4]) }}" class="call-now btn btn-dark">Book Now</a>
                     </div>
                 </div>
             </div>

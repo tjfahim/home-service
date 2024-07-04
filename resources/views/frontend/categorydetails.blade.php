@@ -21,7 +21,7 @@
         <div class="col-md-5">
             <h5>{{ $service->title }}</h5>
             <p>{{ $service->short_description }}</p>
-            <a href="#" class="">View Details</a>
+            <a href="{{ route('service.details', ['id' => $service->id]) }}" class="">View Details</a>
         </div>
         
         <!-- Price -->

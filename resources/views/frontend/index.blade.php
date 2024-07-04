@@ -67,7 +67,7 @@
                         <br>
                         <span class="card-text">Starting from: <strong class="custom-price">${{ $feature->price }}</strong></span>
                         <br><br>
-                        <a href="#" class="btn btn-dark">View All</a>
+                        <a href="{{ route('category.details', ['id' => $feature->id]) }}" class="btn btn-dark">View All</a>
                         <br><br>
                         <p class="card-text">{!! $feature->description !!}</p>
                     </div>

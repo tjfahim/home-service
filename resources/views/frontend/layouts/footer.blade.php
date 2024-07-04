@@ -3,21 +3,30 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h5>Section 1</h5>
-                <p>Content for Section 1</p>
+                <h5>Services</h5>
+                @foreach ($categories as $category)
+                <a class="nav-link {{ request()->is('category-details/' . $category->id) ? 'active' : '' }}" href="{{ route('category.details', ['id' => $category->id]) }}">{{ $category->name }}</a>
+
+                @endforeach            </div>
+            <div class="col-md-4">
+                <h5>Useful Links</h5>
+                    <a class="nav-link {{ request()->is('hvac-installation') ? 'active' : '' }}" href="{{ route('hvacpage') }}">HVAC Installation</a>
+                    <a class="nav-link {{ request()->is('civil-work') ? 'active' : '' }}" href="{{ route('civilpage') }}">Civil Work</a>
+                    <a class="nav-link {{ request()->is('plumbing') ? 'active' : '' }}" href="{{ route('plumbingpage') }}">Plumbing</a>
+                    <a class="nav-link {{ request()->is('book-online') ? 'active' : '' }}" href="{{ route('allservice') }}">Book Online</a>
             </div>
             <div class="col-md-4">
-                <h5>Section 2</h5>
-                <p>Content for Section 2</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Section 3</h5>
-                <p>Content for Section 3</p>
+                <h5>Contact</h5>
+                <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact Page</a>
+                                <a href="tel:+{{ $settingsinfo->callnownumber }}" class="nav-link">Phone: {{ $settingsinfo->callnownumber }}</a>
+                
+                <p class="nav-link" >Email: {{ $settingsinfo->email }}</p>
+
             </div>
         </div>
         <div class="row mt-3">
             <div class="col-md-12 text-center">
-                <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+                <p>&copy; 2024 . All Rights Reserved.</p>
             </div>
         </div>
     </div>

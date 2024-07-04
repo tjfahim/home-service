@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AirconPageController;
 use App\Http\Controllers\Admin\BookingManageController;
 use App\Http\Controllers\Admin\BrandImageController;
 use App\Http\Controllers\Admin\CivilPageController;
+use App\Http\Controllers\Admin\ContactManageController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ElectricalPageController;
 use App\Http\Controllers\Admin\HomeController;
@@ -31,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/category-details/{id}', [FrontendController::class, 'categorydetails'])->name('category.details');
+Route::get('/service-details/{id}', [FrontendController::class, 'servicedetails'])->name('service.details');
 Route::get('/service-booking/{id}', [FrontendController::class, 'booking'])->name('service.booking');
 Route::get('/book-online/{id?}', [FrontendController::class, 'allservice'])->name('allservice');
 Route::post('/booking-store', [FrontendController::class, 'bookingstore'])->name('booking.store');
@@ -39,6 +41,9 @@ Route::get('/civil-work', [FrontendController::class, 'civilpage'])->name('civil
 Route::get('/aircon-repair', [FrontendController::class, 'airconpage'])->name('airconpage');
 Route::get('/electrical', [FrontendController::class, 'electricalpage'])->name('electricalpage');
 Route::get('/plumbing', [FrontendController::class, 'plumbingpage'])->name('plumbingpage');
+Route::get('/contact-page', [FrontendController::class, 'contact'])->name('contact');
+Route::post('/contact-store', [FrontendController::class, 'contactstore'])->name('contact.store');
+
 Route::get('/adminpage', [AuthController::class, 'showLoginFrom'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -99,6 +104,11 @@ Route::get('settings/edit', [SettingController::class, 'edit'])->name('settings.
     Route::get('bookingmanage/{id}/edit', [BookingManageController::class, 'edit'])->name('bookingmanage.edit');
     Route::put('bookingmanage/{id}', [BookingManageController::class, 'update'])->name('bookingmanage.update');
     Route::delete('bookingmanage/{id}', [BookingManageController::class, 'destroy'])->name('bookingmanage.destroy');
+
+    Route::get('contactmanage', [ContactManageController::class, 'index'])->name('contactmanage.index');
+    Route::get('contactmanage/edit/{id}', [ContactManageController::class, 'edit'])->name('contactmanage.edit');
+    Route::put('contactmanage/update/{id}', [ContactManageController::class, 'update'])->name('contactmanage.update');
+    Route::delete('contactmanage/destroy/{id}', [ContactManageController::class, 'destroy'])->name('contactmanage.destroy');
 
 
 });

@@ -6,6 +6,7 @@ use App\Models\AirconPage;
 use App\Models\BookingManage;
 use App\Models\BrandImage;
 use App\Models\CivilPage;
+use App\Models\ContactManage;
 use App\Models\ElectricalPage;
 use App\Models\HomeContent;
 use App\Models\HvacPage;
@@ -34,6 +35,12 @@ class FrontendController extends Controller
         $category = ServiceCategory::find($id);
         $services = Services::where('service_category_id',$id)->get();
         return view('frontend.categorydetails', compact('services','category'));
+
+    }
+    public function servicedetails($id)
+    {
+        $service = Services::find($id);
+        return view('frontend.servicedetails', compact('service'));
 
     }
     public function booking($id)
@@ -136,5 +143,43 @@ class FrontendController extends Controller
         return view('frontend.electricalpage', compact('content'));
 
     }
+    public function contact()
+    {
+        return view('frontend.contact');
+
+    }
+    public function contactStore(Request $request)
+{
+    $messages = [
+        'email.email' => 'The email must be a valid email address.',
+    ];
+
+    // Validate the incoming request data
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'required|string|max:35',
+        'address' => 'nullable|string|max:255',
+        'description' => 'nullable|string',
+    ], $messages);
+
+    // Redirect back with errors if validation fails
+    if ($validator->fails()) {
+        return Redirect::back()->withInput()->withErrors($validator);
+    }
+
+    // Create a new contact using the ContactManage model
+    ContactManage::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'address' => $request->address,
+        'description' => $request->description,
+    ]);
+
+    // Redirect back with success message
+    return redirect()->back()->with('success', 'Message send successfully.');
+}
+
    
 }

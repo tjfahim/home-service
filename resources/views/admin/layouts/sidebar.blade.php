@@ -14,6 +14,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="{{ route('admin.dashboard') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ route('contactmanage.index') }}"> <i class="menu-icon fa fa-dashboard"></i>Contact </a>
                         <a href="{{ route('bookingmanage.index') }}"> <i class="menu-icon fa fa-dashboard"></i>Booking List </a>
                     </li>
                     <h3 class="menu-title">Service</h3><!-- /.menu-title -->
