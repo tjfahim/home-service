@@ -17,7 +17,7 @@
     padding: 10px 15px; /* Adjust padding as needed */
 }
 </style>
-<div style="margin-top: 70px"></div>
+<div style="margin-top: 120px"></div>
 <section class="categorydetails-section text-center pb-5">
     <div class="container">
         <h1 class="text-center p-3">{{ $service->title }}</h1>

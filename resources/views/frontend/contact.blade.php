@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<div style="margin-top: 70px"></div>
+<div style="margin-top: 130px"></div>
 
 <div class="container mt-5">
     <div class="row justify-content-center">

@@ -29,7 +29,8 @@ class SettingController extends Controller
             'opentime' => 'nullable',
             'facebook' => 'nullable|url',
             'twitter' => 'nullable|url',
-            'pinterest' => 'nullable|url',
+            'instagram' => 'nullable|url',
+            'location' => 'nullable',
         ]);
 
         if ($validator->fails()) {

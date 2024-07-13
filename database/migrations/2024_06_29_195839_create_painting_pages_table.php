@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aircon_pages', function (Blueprint $table) {
+        Schema::create('painting_pages', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('aircon_pages');
+        Schema::dropIfExists('painting_pages');
     }
 };

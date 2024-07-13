@@ -5,7 +5,7 @@
 <style>
    .banner{
     height: 250px; background-image: url('{{ asset($content->image) }}'); background-repeat: no-repeat; background-size: cover;
-    margin-top: 70px;
+    margin-top: 120px;
 
     }
     .card-body{

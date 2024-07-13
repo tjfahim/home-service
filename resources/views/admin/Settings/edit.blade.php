@@ -52,23 +52,23 @@
                             <input type="file" name="logo" class="form-control-file">
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="favicon" class="form-control-label">Favicon:</label>
                             @if ($settings->favicon)
                                 <p>Current Favicon:</p>
                                 <img style="width:20%" src="{{ asset($settings->favicon) }}" alt="Current Favicon" class="img-fluid">
                             @endif
                             <input type="file" name="favicon" class="form-control-file">
-                        </div>
+                        </div> --}}
 
                         
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="webtitle" class="form-control-label">Web Title:</label>
                             <input type="text" id="webtitle" name="webtitle" class="form-control" value="{{ old('webtitle', $settings->webtitle) }}">
-                        </div>
+                        </div> --}}
                         <div class="form-group">
-                            <label for="headercolor" class="form-control-label">Web Title:</label>
-                            <input type="color" id="headercolor" name="headercolor" class="form-control" value="{{ old('headercolor', $settings->headercolor) }}">
+                            <label for="location" class="form-control-label">Location:</label>
+                            <input type="text" id="location" name="location" class="form-control" value="{{ old('location', $settings->location) }}">
                         </div>
                         <div class="form-group">
                             <label for="callnownumber" class="form-control-label">Call Now Number:</label>
@@ -95,14 +95,14 @@
                             <input type="text" id="facebook" name="facebook" class="form-control" value="{{ old('facebook', $settings->facebook) }}">
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="twitter" class="form-control-label">Twitter:</label>
                             <input type="text" id="twitter" name="twitter" class="form-control" value="{{ old('twitter', $settings->twitter) }}">
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
-                            <label for="pinterest" class="form-control-label">Pinterest:</label>
-                            <input type="text" id="pinterest" name="pinterest" class="form-control" value="{{ old('pinterest', $settings->pinterest) }}">
+                            <label for="instagram" class="form-control-label">Instagram:</label>
+                            <input type="text" id="instagram" name="instagram" class="form-control" value="{{ old('instagram', $settings->instagram) }}">
                         </div>
 
                         <div class="form-group">

@@ -31,114 +31,114 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <strong>Edit Aircon Page Content</strong>
+                    <strong>Edit Painting Page Content</strong>
                 </div>
                 <div class="card-body card-block">
-                    <form action="{{ route('airconpage.update') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                    <form action="{{ route('painting.update') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
                         <div class="form-group">
                             <label for="title" class="form-control-label">Title:</label>
-                            <textarea id="title" name="title" class="form-control">{{ old('title', $airconPage->title) }}</textarea>
+                            <textarea id="title" name="title" class="form-control">{{ old('title', $painting->title) }}</textarea>
                         </div>
                       
                       
                         <div class="form-group">
                             <label for="description" class="form-control-label">Description:</label>
-                            <textarea id="description" name="description" class="form-control">{{ old('description', $airconPage->description) }}</textarea>
+                            <textarea id="description" name="description" class="form-control">{{ old('description', $painting->description) }}</textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="book_link" class="form-control-label">Book Link:</label>
-                            <input type="text" id="book_link" name="book_link" class="form-control" value="{{ old('book_link', $airconPage->book_link) }}">
+                            <input type="text" id="book_link" name="book_link" class="form-control" value="{{ old('book_link', $painting->book_link) }}">
                         </div>
 
                         <div class="form-group">
                             <label for="image" class="form-control-label">Main Image:</label>
-                            @if ($airconPage->image)
+                            @if ($painting->image)
                                 <p>Current Image:</p>
-                                <img style="width:20%" src="{{ asset($airconPage->image) }}" alt="Current Image" class="img-fluid">
+                                <img style="width:20%" src="{{ asset($painting->image) }}" alt="Current Image" class="img-fluid">
                             @endif
                             <input type="file" name="image" class="form-control-file">
                         </div>
 
                         <div class="form-group">
                             <label for="service1title" class="form-control-label">Service 1 Title:</label>
-                            <input type="text" id="service1title" name="service1title" class="form-control" value="{{ old('service1title', $airconPage->service1title) }}">
+                            <input type="text" id="service1title" name="service1title" class="form-control" value="{{ old('service1title', $painting->service1title) }}">
                         </div>
 
                         <div class="form-group">
                             <label for="service1description" class="form-control-label">Service 1 Description:</label>
-                            <textarea id="service1description" name="service1description" class="form-control">{{ old('service1description', $airconPage->service1description) }}</textarea>
+                            <textarea id="service1description" name="service1description" class="form-control">{{ old('service1description', $painting->service1description) }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="price1" class="form-control-label">Price 1:</label>
-                            <textarea id="price1" name="price1" class="form-control">{{ old('price1', $airconPage->price1) }}</textarea>
+                            <textarea id="price1" name="price1" class="form-control">{{ old('price1', $painting->price1) }}</textarea>
                         </div>
                       
                         <div class="form-group">
                             <label for="service1image" class="form-control-label">Service 1 Image:</label>
-                            @if ($airconPage->service1image)
+                            @if ($painting->service1image)
                                 <p>Current Image:</p>
-                                <img style="width:20%" src="{{ asset($airconPage->service1image) }}" alt="Current Image" class="img-fluid">
+                                <img style="width:20%" src="{{ asset($painting->service1image) }}" alt="Current Image" class="img-fluid">
                             @endif
                             <input type="file" name="service1image" class="form-control-file">
                         </div>
 
                         <div class="form-group">
                             <label for="service2title" class="form-control-label">Service 2 Title:</label>
-                            <input type="text" id="service2title" name="service2title" class="form-control" value="{{ old('service2title', $airconPage->service2title) }}">
+                            <input type="text" id="service2title" name="service2title" class="form-control" value="{{ old('service2title', $painting->service2title) }}">
                         </div>
 
                         <div class="form-group">
                             <label for="service2description" class="form-control-label">Service 2 Description:</label>
-                            <textarea id="service2description" name="service2description" class="form-control">{{ old('service2description', $airconPage->service2description) }}</textarea>
+                            <textarea id="service2description" name="service2description" class="form-control">{{ old('service2description', $painting->service2description) }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="price2" class="form-control-label">Price 2:</label>
-                            <textarea id="price2" name="price2" class="form-control">{{ old('price2', $airconPage->price2) }}</textarea>
+                            <textarea id="price2" name="price2" class="form-control">{{ old('price2', $painting->price2) }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="service2image" class="form-control-label">Service 2 Image:</label>
-                            @if ($airconPage->service2image)
+                            @if ($painting->service2image)
                                 <p>Current Image:</p>
-                                <img style="width:20%" src="{{ asset($airconPage->service2image) }}" alt="Current Image" class="img-fluid">
+                                <img style="width:20%" src="{{ asset($painting->service2image) }}" alt="Current Image" class="img-fluid">
                             @endif
                             <input type="file" name="service2image" class="form-control-file">
                         </div>
 
                         <div class="form-group">
                             <label for="service3title" class="form-control-label">Service 3 Title:</label>
-                            <input type="text" id="service3title" name="service3title" class="form-control" value="{{ old('service3title', $airconPage->service3title) }}">
+                            <input type="text" id="service3title" name="service3title" class="form-control" value="{{ old('service3title', $painting->service3title) }}">
                         </div>
 
                         <div class="form-group">
                             <label for="service3description" class="form-control-label">Service 3 Description:</label>
-                            <textarea id="service3description" name="service3description" class="form-control">{{ old('service3description', $airconPage->service3description) }}</textarea>
+                            <textarea id="service3description" name="service3description" class="form-control">{{ old('service3description', $painting->service3description) }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="price3" class="form-control-label">Price 3:</label>
-                            <textarea id="price3" name="price3" class="form-control">{{ old('price3', $airconPage->price3) }}</textarea>
+                            <textarea id="price3" name="price3" class="form-control">{{ old('price3', $painting->price3) }}</textarea>
                         </div>
 
 
                         <div class="form-group">
                             <label for="service3image" class="form-control-label">Service 3 Image:</label>
-                            @if ($airconPage->service3image)
+                            @if ($painting->service3image)
                                 <p>Current Image:</p>
-                                <img style="width:20%" src="{{ asset($airconPage->service3image) }}" alt="Current Image" class="img-fluid">
+                                <img style="width:20%" src="{{ asset($painting->service3image) }}" alt="Current Image" class="img-fluid">
                             @endif
                             <input type="file" name="service3image" class="form-control-file">
                         </div>
 
                         <div class="form-group">
                             <label for="final_description" class="form-control-label">Final Description:</label>
-                            <textarea id="final_description" name="final_description" class="form-control">{{ old('final_description', $airconPage->final_description) }}</textarea>
+                            <textarea id="final_description" name="final_description" class="form-control">{{ old('final_description', $painting->final_description) }}</textarea>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Update Aircon Page Content</button>
+                            <button type="submit" class="btn btn-primary btn-block">Update Painting Page Content</button>
                         </div>
                     </form>
                 </div>

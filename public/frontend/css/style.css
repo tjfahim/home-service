@@ -128,7 +128,7 @@ ul,ol {
             background-color: #9bcbfb45;
         }
         .categorydetails-section{
-            margin-top: 100px;
+            margin-top: 120px;
         }
 
         .rounded-circle{
@@ -190,7 +190,7 @@ ul,ol {
 
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #16d6dd;
+    color: #0c8e92;
 }
 
 .navbar {
@@ -206,7 +206,7 @@ ul,ol {
     color: aliceblue;
 }
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    color: rgb(32, 255, 236);
+    color: rgb(0,86,179);
 }
 .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(247, 241, 227,1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -239,7 +239,7 @@ ul,ol {
     z-index: -1;
 } */
 .bannerImage {
-    margin-top: 100px;    
+    margin-top: 120px;    
 }
 .bannerPart {
     margin-top: 50px;
@@ -290,7 +290,7 @@ ul,ol {
         margin-top: 150px;
     }
     nav{
-        background: #2c2c54;
+        background: #ffffff;
     }
     nav .logbtn{
         margin-top: 20px; 

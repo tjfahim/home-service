@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AirconPage;
+use App\Models\PaintingPage;
 use App\Models\BookingManage;
 use App\Models\BrandImage;
 use App\Models\CivilPage;
@@ -130,10 +130,10 @@ class FrontendController extends Controller
 
     }
    
-    public function airconpage()
+    public function paintingpage()
     {
-        $content = AirconPage::first();
-        return view('frontend.airconpage', compact('content'));
+        $content = PaintingPage::first();
+        return view('frontend.paintingpage', compact('content'));
 
     }
    

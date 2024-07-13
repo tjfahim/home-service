@@ -18,13 +18,13 @@ return new class extends Migration
             $table->string('favicon')->nullable();
             $table->string('webtitle');
             $table->string('callnownumber')->nullable();
-            $table->string('headercolor')->nullable();
+            $table->string('location')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('email')->nullable();
             $table->string('opentime')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
-            $table->string('pinterest')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }

@@ -14,12 +14,12 @@ class Settings extends Model
         'favicon',
         'webtitle',
         'callnownumber',
-        'headercolor',
+        'location',
         'whatsapp',
         'email',
         'opentime',
         'facebook',
         'twitter',
-        'pinterest',
+        'instagram',
     ];
 }

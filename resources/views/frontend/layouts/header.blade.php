@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-
     <link rel="shortcut icon" type="image/png" href="{{ asset('images/'. $settingsinfo->favicon)}}" />
     <title>{{ $settingsinfo->webtitle }}</title>
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}">
@@ -15,54 +14,86 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/media.css')}}">
 
-  
     <style>
         .headmain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff; /* Adjust background color as needed */
-    z-index: 1000; /* Ensure it's above other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
-}
-body {
-    padding-top: 50px; /* Adjust this value to match your header height */
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Adjust background color as needed */
+            z-index: 1000; /* Ensure it's above other content */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+        }
 
-#whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: green; /* Adjust background color */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000; /* Ensure it appears above other content */
-    text-decoration: none; /* Remove underline from link */
-    color: white; /* Icon color */
-    font-size: 30px; /* Icon size */
-}
+        body {
+            padding-top: 50px; /* Adjust this value to match your header height */
+        }
 
-#whatsapp-button:hover {
-    background-color: darkgreen; /* Adjust hover background color */
-}
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .left-content img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .left-content p {
+            margin-top: 10px;
+        }
+
+        #whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: green; /* Adjust background color */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it appears above other content */
+            text-decoration: none; /* Remove underline from link */
+            color: white; /* Icon color */
+            font-size: 30px; /* Icon size */
+        }
+
+        #whatsapp-button:hover {
+            background-color: darkgreen; /* Adjust hover background color */
+        }
+
+        @media (max-width: 992px) {
+            #navbarSupportedContent {
+                background-color: #fff; /* Add white background for mobile menu */
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="headmain">
-        <div class="header-top">
+        <div class="header-top ">
             <div class="container">
                 <div class="left-content">
-                    <a class="navbar-brand" href="{{ route('home') }}">{{ $settingsinfo->title }}</a>
+                    <div>
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img style="height: 60px;margin-top:6px" src="{{ asset($settingsinfo->logo) }}" alt="">
+                        </a>
+                    </div>
                     <p>Book online or Call: {{ $settingsinfo->callnownumber }}</p>
                 </div>
-                <a href="tel:+{{ $settingsinfo->callnownumber }}" class="call-now btn btn-dark">Call Now</a>
+                <a href="tel:{{ $settingsinfo->callnownumber }}" class="call-now btn btn-dark">Call Now</a>
             </div>
         </div>
     
@@ -86,10 +117,7 @@ body {
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach ($categories as $category)
                                 <a class="dropdown-item {{ request()->is('category-details/' . $category->id) ? 'active' : '' }}" href="{{ route('category.details', ['id' => $category->id]) }}">{{ $category->name }}</a>
-
                                 @endforeach
-                                
-                                
                             </div>
                         </li>
                         <li class="nav-item">
@@ -105,7 +133,7 @@ body {
                             <a class="nav-link {{ request()->is('electrical') ? 'active' : '' }}" href="{{ route('electricalpage') }}">Electrical</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->is('aircon-repair') ? 'active' : '' }}" href="{{ route('airconpage') }}">Aircon Repair</a>
+                            <a class="nav-link {{ request()->is('painting') ? 'active' : '' }}" href="{{ route('paintingpage') }}">Painting</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ request()->is('book-online') ? 'active' : '' }}" href="{{ route('allservice') }}">Book Online</a>
@@ -125,6 +153,13 @@ body {
 
     <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.navbar-toggler').click(function() {
+                $('#navbarSupportedContent').collapse('toggle');
+            });
+        });
+    </script>
 </body>
 
 </html>

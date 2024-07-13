@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\AirconPage;
+use App\Models\PaintingPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
-class AirconPageController extends Controller
+class PaintingPageController extends Controller
 {
     public function edit()
     {
-        $airconPage = AirconPage::first();
-        return view('admin.airconpage.edit', compact('airconPage'));
+        $paintingPage = PaintingPage::first();
+        return view('admin.paintingpage.edit', compact('paintingPage'));
     }
 
     public function update(Request $request)
@@ -42,7 +42,7 @@ class AirconPageController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $airconPage = AirconPage::first();
+        $paintingPage = PaintingPage::first();
 
         $input = $request->except('_token', '_method');
 
@@ -50,8 +50,8 @@ class AirconPageController extends Controller
         foreach (['image', 'service1image', 'service2image', 'service3image'] as $imageField) {
             if ($request->hasFile($imageField)) {
                 // Delete old image if exists
-                if ($airconPage->$imageField && File::exists(public_path($airconPage->$imageField))) {
-                    File::delete(public_path($airconPage->$imageField));
+                if ($paintingPage->$imageField && File::exists(public_path($paintingPage->$imageField))) {
+                    File::delete(public_path($paintingPage->$imageField));
                 }
 
                 // Upload new image
@@ -62,8 +62,8 @@ class AirconPageController extends Controller
             }
         }
 
-        $airconPage->update($input);
+        $paintingPage->update($input);
 
-        return redirect()->route('airconpage.edit')->with('success', 'Aircon page content updated successfully.');
+        return redirect()->route('paintingpage.edit')->with('success', 'Painting page content updated successfully.');
     }
 }
